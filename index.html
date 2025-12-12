@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartResume - Professional Resume Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-file-alt me-2"></i>SmartResume
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <!-- Enquiry Form in Navbar -->
+                <div class="navbar-enquiry">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        <i class="fas fa-question-circle me-1"></i>Quick Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Build Professional Resumes for Your Dream Job</h1>
+                        <p class="hero-subtitle">Create role-specific resumes with our AI-powered builder and get instant analysis to improve your chances of landing interviews.</p>
+                        <div class="hero-buttons">
+                            <a href="resume-builder.html" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-plus me-2"></i>Build Resume
+                            </a>
+                            <a href="resume-analyzer.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-search me-2"></i>Analyze Resume
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="resume-slider">
+                        <div id="resumeCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#resumeCarousel" data-bs-slide-to="0" class="active"></button>
+                                <button type="button" data-bs-target="#resumeCarousel" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#resumeCarousel" data-bs-slide-to="2"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="resume-preview">
+                                        <div class="resume-mockup developer-template">
+                                            <div class="resume-header">
+                                                <h3>Full Stack Developer</h3>
+                                                <p>Professional Template</p>
+                                            </div>
+                                            <div class="resume-content">
+                                                <div class="skills-section">
+                                                    <h4>Technical Skills</h4>
+                                                    <div class="skill-tags">
+                                                        <span class="skill-tag">React</span>
+                                                        <span class="skill-tag">Node.js</span>
+                                                        <span class="skill-tag">Python</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="resume-preview">
+                                        <div class="resume-mockup analyst-template">
+                                            <div class="resume-header">
+                                                <h3>Data Analyst</h3>
+                                                <p>Analytics Focused</p>
+                                            </div>
+                                            <div class="resume-content">
+                                                <div class="skills-section">
+                                                    <h4>Analytics Tools</h4>
+                                                    <div class="skill-tags">
+                                                        <span class="skill-tag">SQL</span>
+                                                        <span class="skill-tag">Python</span>
+                                                        <span class="skill-tag">Tableau</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="resume-preview">
+                                        <div class="resume-mockup mobile-template">
+                                            <div class="resume-header">
+                                                <h3>Mobile Developer</h3>
+                                                <p>App Development</p>
+                                            </div>
+                                            <div class="resume-content">
+                                                <div class="skills-section">
+                                                    <h4>Mobile Technologies</h4>
+                                                    <div class="skill-tags">
+                                                        <span class="skill-tag">React Native</span>
+                                                        <span class="skill-tag">Flutter</span>
+                                                        <span class="skill-tag">iOS</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#resumeCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#resumeCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section py-5" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="25000">0</div>
+                        <div class="stat-label">Resumes Created</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15000">0</div>
+                        <div class="stat-label">Successful Placements</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="95">0</div>
+                        <div class="stat-label">Success Rate %</div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Job Roles Covered</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-overview py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Why Choose SmartResume?</h2>
+                    <p class="section-subtitle">Professional tools to create and optimize your resume for any job role</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4>Role-Specific Templates</h4>
+                        <p>Choose from professionally designed templates tailored for different job roles and industries.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>AI-Powered Analysis</h4>
+                        <p>Get instant feedback and suggestions to improve your resume with our intelligent analysis tool.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h4>Instant PDF Download</h4>
+                        <p>Generate and download professional PDF resumes ready for job applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="cta-title">Ready to Create Your Perfect Resume?</h2>
+                    <p class="cta-subtitle">Join thousands of professionals who have landed their dream jobs with SmartResume</p>
+                    <a href="resume-builder.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-rocket me-2"></i>Get Started Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-file-alt me-2"></i>SmartResume</h5>
+                        <p>Professional resume building made easy</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <a href="about.html">About</a>
+                        <a href="features.html">Features</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">&copy; 2025 SmartResume. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enquiryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="enquiryName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="enquiryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="enquiryMessage" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

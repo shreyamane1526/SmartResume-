@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: #333; }
+        .header { background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%); color: white; padding: 30px; text-align: center; }
+        .name { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
+        .title { font-size: 18px; margin-bottom: 15px; opacity: 0.9; }
+        .contact-info { font-size: 12px; }
+        .contact-item { display: inline-block; margin: 0 15px; }
+        .section { margin: 25px 30px; }
+        .section-title { color: #1a237e; font-size: 18px; font-weight: bold; border-bottom: 2px solid #1a237e; padding-bottom: 8px; margin-bottom: 15px; }
+        .objective { font-size: 13px; line-height: 1.6; text-align: justify; margin-bottom: 20px; }
+        .experience-item { margin-bottom: 20px; }
+        .job-title { font-size: 15px; font-weight: bold; color: #1a237e; }
+        .company { font-size: 13px; font-style: italic; color: #666; margin: 3px 0; }
+        .date-range { font-size: 11px; color: #888; margin-bottom: 8px; }
+        .job-description { font-size: 12px; line-height: 1.5; text-align: justify; }
+        .education-item { margin-bottom: 15px; }
+        .degree { font-size: 14px; font-weight: bold; color: #1a237e; }
+        .institution { font-size: 12px; color: #666; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 8px; }
+        .skill-category { margin-bottom: 15px; }
+        .skill-category-title { font-size: 14px; font-weight: bold; color: #1a237e; margin-bottom: 8px; }
+        .skill-tag { background: linear-gradient(135deg, #1a237e 0%, #3f51b5 100%); color: white; padding: 6px 12px; border-radius: 15px; font-size: 11px; display: inline-block; margin: 2px; }
+        .certification-item { margin-bottom: 12px; }
+        .cert-name { font-size: 13px; font-weight: bold; color: #1a237e; }
+        .cert-issuer { font-size: 11px; color: #666; }
+        .language-item { display: inline-block; margin-right: 20px; margin-bottom: 8px; }
+        .language-name { font-weight: bold; font-size: 12px; }
+        .language-level { font-size: 11px; color: #666; }
+        .two-column { display: flex; gap: 30px; }
+        .left-column { flex: 2; }
+        .right-column { flex: 1; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="name">{{personalInfo.firstName}} {{personalInfo.lastName}}</div>
+        <div class="title">{{jobRole.name}}</div>
+        <div class="contact-info">
+            <span class="contact-item">📧 {{personalInfo.email}}</span>
+            <span class="contact-item">📱 {{personalInfo.phone}}</span>
+            {{#if personalInfo.address}}<span class="contact-item">📍 {{personalInfo.address}}</span>{{/if}}
+            {{#if personalInfo.linkedin}}<span class="contact-item">💼 LinkedIn</span>{{/if}}
+            {{#if personalInfo.website}}<span class="contact-item">🌐 Portfolio</span>{{/if}}
+        </div>
+    </div>
+
+    <div class="two-column">
+        <div class="left-column">
+            <!-- Professional Objective -->
+            {{#if personalInfo.objective}}
+            <div class="section">
+                <div class="section-title">Professional Objective</div>
+                <div class="objective">{{personalInfo.objective}}</div>
+            </div>
+            {{/if}}
+
+            <!-- Work Experience -->
+            {{#if experience}}
+            <div class="section">
+                <div class="section-title">Work Experience</div>
+                {{#each experience}}
+                <div class="experience-item">
+                    <div class="job-title">{{title}}</div>
+                    <div class="company">{{company}}</div>
+                    <div class="date-range">{{startDate}} - {{#if current}}Present{{else}}{{endDate}}{{/if}}</div>
+                    {{#if description}}<div class="job-description">{{description}}</div>{{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            <!-- Education -->
+            {{#if education}}
+            <div class="section">
+                <div class="section-title">Education</div>
+                {{#each education}}
+                <div class="education-item">
+                    <div class="degree">{{degree}}</div>
+                    <div class="institution">{{institution}} {{#if year}}({{year}}){{/if}}</div>
+                    {{#if gpa}}<div class="date-range">GPA: {{gpa}}</div>{{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="right-column">
+            <!-- Technical Skills -->
+            {{#if skills.technical}}
+            <div class="section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skill-category">
+                    <div class="skills-container">
+                        {{#each skills.technical}}
+                        <span class="skill-tag">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+
+            <!-- Soft Skills -->
+            {{#if skills.soft}}
+            <div class="section">
+                <div class="section-title">Soft Skills</div>
+                <div class="skill-category">
+                    <div class="skills-container">
+                        {{#each skills.soft}}
+                        <span class="skill-tag">{{this}}</span>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+
+            <!-- Certifications -->
+            {{#if certifications}}
+            <div class="section">
+                <div class="section-title">Certifications</div>
+                {{#each certifications}}
+                <div class="certification-item">
+                    <div class="cert-name">{{name}}</div>
+                    {{#if issuer}}<div class="cert-issuer">{{issuer}} {{#if year}}({{year}}){{/if}}</div>{{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            <!-- Languages -->
+            {{#if languages}}
+            <div class="section">
+                <div class="section-title">Languages</div>
+                {{#each languages}}
+                <div class="language-item">
+                    <div class="language-name">{{name}}</div>
+                    {{#if level}}<div class="language-level">{{level}}</div>{{/if}}
+                </div>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>

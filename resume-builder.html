@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder - SmartResume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <style>
+        /* Style the select box */
+        select.form-control {
+            color: rgb(234, 234, 234);
+        }
+
+        /* Style the dropdown options */
+        select.form-control option {
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-file-alt me-2"></i>SmartResume
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-enquiry">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        <i class="fas fa-question-circle me-1"></i>Quick Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Build Your Professional Resume</h1>
+            <p class="page-subtitle">Create a tailored resume that stands out to employers</p>
+        </div>
+    </section>
+
+    <!-- Progress Indicator -->
+    <section class="py-3" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="progress-indicator">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Job Role</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Experience</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Skills</div>
+                </div>
+                <div class="progress-step" data-step="5">
+                    <div class="step-number">5</div>
+                    <div class="step-label">Preview</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Builder Form -->
+    <section class="form-section">
+        <div class="container">
+            <form id="resumeBuilderForm" class="multi-step-form">
+                
+                <!-- Step 1: Job Role Selection -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-container">
+                        <h3 class="mb-4">Select Your Target Job Role</h3>
+                        <p class="text-muted mb-4">Choose the job role you're applying for to get a customized template</p>
+                        
+                        <div class="job-role-selector" id="jobRoleSelector">
+                            <!-- Job roles will be loaded dynamically -->
+                        </div>
+                        
+                        <div class="form-navigation mt-4">
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep1" disabled>
+                                Next: Personal Information <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Personal Information -->
+                <div class="form-step" data-step="2">
+                    <div class="form-container">
+                        <h3 class="mb-4">Personal Information</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="City, State, Country">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="linkedin" class="form-label">LinkedIn Profile</label>
+                                    <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="website" class="form-label">Portfolio/Website</label>
+                                    <input type="url" class="form-control" id="website" name="website" placeholder="https://yourportfolio.com">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="objective" class="form-label">Professional Objective</label>
+                            <textarea class="form-control" id="objective" name="objective" rows="4" placeholder="Brief summary of your career goals and what you bring to the role..."></textarea>
+                        </div>
+                        
+                        <div class="form-navigation mt-4">
+                            <button type="button" class="btn btn-secondary me-3" onclick="previousStep()">
+                                <i class="fas fa-arrow-left me-2"></i>Previous
+                            </button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="nextStep()">
+                                Next: Experience <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Experience -->
+                <div class="form-step" data-step="3">
+                    <div class="form-container">
+                        <h3 class="mb-4">Work Experience</h3>
+                        
+                        <div id="experienceContainer">
+                            <div class="experience-item" data-index="0">
+                                <div class="item-header">
+                                    <h5>Experience #1</h5>
+                                    <button type="button" class="btn btn-sm btn-outline-danger remove-experience" style="display: none;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Job Title *</label>
+                                            <input type="text" class="form-control" name="experience[0][title]" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Company *</label>
+                                            <input type="text" class="form-control" name="experience[0][company]" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Start Date *</label>
+                                            <input type="month" class="form-control" name="experience[0][startDate]" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">End Date</label>
+                                            <input type="month" class="form-control" name="experience[0][endDate]">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">&nbsp;</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="experience[0][current]">
+                                                <label class="form-check-label">Currently working here</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Job Description</label>
+                                    <textarea class="form-control" name="experience[0][description]" rows="4" placeholder="Describe your key responsibilities and achievements..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-outline-primary mb-4" id="addExperience">
+                            <i class="fas fa-plus me-2"></i>Add More Experience
+                        </button>
+                        
+                        <!-- Education Section -->
+                        <h4 class="mt-5 mb-3">Education</h4>
+                        <div id="educationContainer">
+                            <div class="education-item" data-index="0">
+                                <div class="item-header">
+                                    <h5>Education #1</h5>
+                                    <button type="button" class="btn btn-sm btn-outline-danger remove-education" style="display: none;">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Degree/Certificate *</label>
+                                            <input type="text" class="form-control" name="education[0][degree]" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Institution *</label>
+                                            <input type="text" class="form-control" name="education[0][institution]" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Year of Graduation</label>
+                                            <input type="number" class="form-control" name="education[0][year]" min="1950" max="2030">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">GPA/Grade</label>
+                                            <input type="text" class="form-control" name="education[0][gpa]" placeholder="Optional">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">Location</label>
+                                            <input type="text" class="form-control" name="education[0][location]" placeholder="City, Country">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-outline-primary mb-4" id="addEducation">
+                            <i class="fas fa-plus me-2"></i>Add More Education
+                        </button>
+                        
+                        <div class="form-navigation mt-4">
+                            <button type="button" class="btn btn-secondary me-3" onclick="previousStep()">
+                                <i class="fas fa-arrow-left me-2"></i>Previous
+                            </button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="nextStep()">
+                                Next: Skills <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Skills -->
+                <div class="form-step" data-step="4">
+                    <div class="form-container">
+                        <h3 class="mb-4">Skills & Competencies</h3>
+                        
+                        <div class="skills-section">
+                            <h5 class="mb-3">Technical Skills</h5>
+                            <div class="form-group">
+                                <label for="technicalSkills" class="form-label">Add your technical skills (one per line)</label>
+                                <textarea class="form-control" id="technicalSkills" name="technicalSkills" rows="5" placeholder="JavaScript&#10;Python&#10;React&#10;Node.js&#10;SQL"></textarea>
+                                <small class="form-text text-muted">Enter each skill on a new line</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-section mt-4">
+                            <h5 class="mb-3">Soft Skills</h5>
+                            <div class="form-group">
+                                <label for="softSkills" class="form-label">Add your soft skills (one per line)</label>
+                                <textarea class="form-control" id="softSkills" name="softSkills" rows="5" placeholder="Leadership&#10;Communication&#10;Problem Solving&#10;Team Collaboration&#10;Project Management"></textarea>
+                                <small class="form-text text-muted">Enter each skill on a new line</small>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-section mt-4">
+                            <h5 class="mb-3">Certifications</h5>
+                            <div id="certificationsContainer">
+                                <div class="certification-item" data-index="0">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Certification Name</label>
+                                                <input type="text" class="form-control" name="certifications[0][name]" placeholder="e.g., AWS Certified Developer">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Issuing Organization</label>
+                                                <input type="text" class="form-control" name="certifications[0][issuer]" placeholder="e.g., Amazon Web Services">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="form-label">Year</label>
+                                                <input type="number" class="form-control" name="certifications[0][year]" min="1990" max="2030">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-outline-primary" id="addCertification">
+                                <i class="fas fa-plus me-2"></i>Add Certification
+                            </button>
+                        </div>
+                        
+                        <div class="skills-section mt-4">
+                            <h5 class="mb-3">Languages</h5>
+                            <div id="languagesContainer">
+                                <div class="language-item" data-index="0">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="form-label">Language</label>
+                                                <input type="text" class="form-control" name="languages[0][name]" placeholder="e.g., English">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="form-label">Proficiency Level</label>
+                                                <select class="form-control" name="languages[0][level]">
+                                                    <option value="">Select Level</option>
+                                                    <option value="native">Native</option>
+                                                    <option value="fluent">Fluent</option>
+                                                    <option value="intermediate">Intermediate</option>
+                                                    <option value="basic">Basic</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="form-label">&nbsp;</label>
+                                                <button type="button" class="btn btn-outline-danger btn-sm remove-language" style="display: none;">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-outline-primary" id="addLanguage">
+                                <i class="fas fa-plus me-2"></i>Add Language
+                            </button>
+                        </div>
+                        
+                        <div class="form-navigation mt-4">
+                            <button type="button" class="btn btn-secondary me-3" onclick="previousStep()">
+                                <i class="fas fa-arrow-left me-2"></i>Previous
+                            </button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="nextStep()">
+                                Preview Resume <i class="fas fa-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Preview -->
+                <div class="form-step" data-step="5">
+                    <div class="form-container">
+                        <h3 class="mb-4">
+                            <i class="fas fa-eye me-2"></i>Preview Your Resume
+                        </h3>
+                        
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Preview Tips:</strong> This is how your resume will look when downloaded as PDF. 
+                            You can go back to previous steps to make changes, and the preview will update automatically.
+                        </div>
+                        
+                        <div class="preview-controls mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="preview-info">
+                                        <small class="text-muted">
+                                            <i class="fas fa-user me-1"></i>
+                                            Template: <span id="previewTemplateName">Professional</span>
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="forcePreviewUpdate()">
+                                        <i class="fas fa-sync-alt me-1"></i>Refresh Preview
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-section">
+                            <div id="resumePreview" class="resume-preview-container">
+                                <div class="text-center py-5">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <p class="mt-3">Generating your resume preview...</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-navigation mt-4">
+                            <button type="button" class="btn btn-secondary me-3" onclick="previousStep()">
+                                <i class="fas fa-arrow-left me-2"></i>Previous
+                            </button>
+                            <div class="action-buttons">
+                                <button type="button" class="btn btn-success btn-lg me-3" id="downloadResume">
+                                    <i class="fas fa-download me-2"></i>Download PDF
+                                </button>
+                                <button type="button" class="btn btn-primary btn-lg" id="emailResume">
+                                    <i class="fas fa-envelope me-2"></i>Email Resume
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-file-alt me-2"></i>SmartResume</h5>
+                        <p>Professional resume building made easy</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <a href="about.html">About</a>
+                        <a href="features.html">Features</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">&copy; 2025 SmartResume. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enquiryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="enquiryName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="enquiryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="enquiryMessage" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/resume-builder.js"></script>
+
+    <style>
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+        
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.5;
+            transition: var(--transition);
+        }
+        
+        .progress-step.active {
+            opacity: 1;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-text);
+            color: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .progress-step.active .step-number {
+            background: var(--accent-color);
+            color: var(--light-text);
+        }
+        
+        .step-label {
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .progress-step.active .step-label {
+            color: var(--light-text);
+        }
+        
+        .multi-step-form {
+            position: relative;
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        .experience-item,
+        .education-item,
+        .certification-item,
+        .language-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .item-header h5 {
+            color: var(--light-text);
+            margin-bottom: 0;
+        }
+        
+        .skills-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+        }
+        
+        .skills-section h5 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .resume-preview-container {
+            background: var(--light-text);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            color: var(--dark-bg);
+            min-height: 600px;
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .form-navigation {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+        
+        @media (max-width: 767.98px) {
+            .progress-indicator {
+                gap: 1rem;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .step-label {
+                font-size: 0.8rem;
+            }
+            
+            .form-navigation .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,211 @@
+{
+  "full-stack-developer": {
+    "requiredKeywords": [
+      "full stack", "frontend", "backend", "javascript", "react", "node.js", 
+      "api", "database", "html", "css", "git", "responsive", "web development"
+    ],
+    "preferredKeywords": [
+      "mongodb", "sql", "express", "vue", "angular", "typescript", "graphql",
+      "rest", "microservices", "docker", "aws", "testing", "agile", "scrum"
+    ],
+    "technicalKeywords": [
+      "react", "node.js", "express", "mongodb", "sql", "postgresql", "mysql",
+      "javascript", "typescript", "html5", "css3", "sass", "webpack", "npm",
+      "yarn", "git", "github", "gitlab", "docker", "kubernetes", "aws", "heroku"
+    ],
+    "scoringWeights": {
+      "keywords": 35,
+      "structure": 20,
+      "experience": 25,
+      "education": 10,
+      "skills": 10
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["computer science", "software engineering", "information technology"],
+    "criticalSections": ["technical skills", "work experience", "projects"]
+  },
+  
+  "frontend-developer": {
+    "requiredKeywords": [
+      "frontend", "javascript", "react", "vue", "angular", "html", "css",
+      "responsive", "ui", "ux", "browser", "web", "client-side"
+    ],
+    "preferredKeywords": [
+      "typescript", "sass", "less", "webpack", "babel", "npm", "yarn",
+      "bootstrap", "tailwind", "material-ui", "figma", "adobe xd", "design systems"
+    ],
+    "technicalKeywords": [
+      "react", "vue.js", "angular", "javascript", "typescript", "html5", "css3",
+      "sass", "less", "bootstrap", "tailwind", "webpack", "vite", "parcel",
+      "figma", "sketch", "adobe xd", "responsive design", "cross-browser"
+    ],
+    "scoringWeights": {
+      "keywords": 40,
+      "structure": 20,
+      "experience": 20,
+      "education": 10,
+      "skills": 10
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["computer science", "web design", "digital media"],
+    "criticalSections": ["technical skills", "portfolio", "work experience"]
+  },
+  
+  "backend-developer": {
+    "requiredKeywords": [
+      "backend", "server-side", "api", "database", "python", "java", "node.js",
+      "sql", "rest", "microservices", "architecture", "scalability"
+    ],
+    "preferredKeywords": [
+      "spring", "django", "flask", "express", "postgresql", "mongodb", "redis",
+      "docker", "kubernetes", "aws", "azure", "devops", "testing", "security"
+    ],
+    "technicalKeywords": [
+      "python", "java", "node.js", "c#", "php", "ruby", "go", "postgresql",
+      "mysql", "mongodb", "redis", "elasticsearch", "docker", "kubernetes",
+      "aws", "azure", "gcp", "nginx", "apache", "linux", "unix"
+    ],
+    "scoringWeights": {
+      "keywords": 35,
+      "structure": 20,
+      "experience": 30,
+      "education": 10,
+      "skills": 5
+    },
+    "minimumExperience": 2,
+    "preferredEducation": ["computer science", "software engineering"],
+    "criticalSections": ["technical skills", "system architecture", "work experience"]
+  },
+  
+  "data-analyst": {
+    "requiredKeywords": [
+      "data analysis", "sql", "python", "r", "excel", "statistics", "visualization",
+      "tableau", "power bi", "dashboard", "reporting", "insights", "metrics"
+    ],
+    "preferredKeywords": [
+      "pandas", "numpy", "matplotlib", "seaborn", "jupyter", "etl", "data mining",
+      "machine learning", "a/b testing", "regression", "forecasting", "kpi"
+    ],
+    "technicalKeywords": [
+      "sql", "python", "r", "tableau", "power bi", "excel", "pandas", "numpy",
+      "matplotlib", "seaborn", "plotly", "jupyter", "spss", "sas", "hadoop",
+      "spark", "hive", "snowflake", "bigquery", "aws", "azure"
+    ],
+    "scoringWeights": {
+      "keywords": 30,
+      "structure": 25,
+      "experience": 25,
+      "education": 15,
+      "skills": 5
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["statistics", "mathematics", "economics", "data science"],
+    "criticalSections": ["analytical skills", "tools and technologies", "work experience"]
+  },
+  
+  "data-scientist": {
+    "requiredKeywords": [
+      "data science", "machine learning", "python", "r", "statistics", "modeling",
+      "algorithms", "deep learning", "ai", "predictive", "analytics", "research"
+    ],
+    "preferredKeywords": [
+      "tensorflow", "pytorch", "scikit-learn", "keras", "neural networks", "nlp",
+      "computer vision", "feature engineering", "cross-validation", "ensemble",
+      "clustering", "classification", "regression", "time series"
+    ],
+    "technicalKeywords": [
+      "python", "r", "tensorflow", "pytorch", "scikit-learn", "keras", "pandas",
+      "numpy", "scipy", "matplotlib", "seaborn", "jupyter", "git", "docker",
+      "aws", "azure", "gcp", "spark", "hadoop", "sql", "nosql"
+    ],
+    "scoringWeights": {
+      "keywords": 35,
+      "structure": 20,
+      "experience": 25,
+      "education": 15,
+      "skills": 5
+    },
+    "minimumExperience": 2,
+    "preferredEducation": ["data science", "computer science", "statistics", "mathematics", "physics"],
+    "criticalSections": ["technical skills", "research experience", "projects"]
+  },
+  
+  "mobile-developer": {
+    "requiredKeywords": [
+      "mobile development", "react native", "flutter", "ios", "android", "app",
+      "mobile app", "cross-platform", "native", "smartphone", "tablet"
+    ],
+    "preferredKeywords": [
+      "swift", "kotlin", "java", "dart", "xcode", "android studio", "app store",
+      "play store", "firebase", "push notifications", "offline", "responsive"
+    ],
+    "technicalKeywords": [
+      "react native", "flutter", "swift", "kotlin", "java", "dart", "ios sdk",
+      "android sdk", "xcode", "android studio", "firebase", "realm", "sqlite",
+      "rest api", "graphql", "push notifications", "app store", "play store"
+    ],
+    "scoringWeights": {
+      "keywords": 35,
+      "structure": 20,
+      "experience": 25,
+      "education": 10,
+      "skills": 10
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["computer science", "mobile development", "software engineering"],
+    "criticalSections": ["mobile technologies", "app portfolio", "work experience"]
+  },
+  
+  "ui-ux-designer": {
+    "requiredKeywords": [
+      "ui design", "ux design", "user experience", "user interface", "figma",
+      "adobe xd", "sketch", "prototyping", "wireframing", "user research"
+    ],
+    "preferredKeywords": [
+      "design systems", "interaction design", "visual design", "usability testing",
+      "persona", "journey mapping", "information architecture", "accessibility",
+      "responsive design", "mobile design", "web design"
+    ],
+    "technicalKeywords": [
+      "figma", "adobe xd", "sketch", "invision", "principle", "framer", "zeplin",
+      "abstract", "marvel", "balsamiq", "axure", "miro", "whimsical", "photoshop",
+      "illustrator", "after effects", "html", "css", "javascript"
+    ],
+    "scoringWeights": {
+      "keywords": 30,
+      "structure": 25,
+      "experience": 25,
+      "education": 10,
+      "skills": 10
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["design", "human-computer interaction", "psychology", "art"],
+    "criticalSections": ["design tools", "portfolio", "design process"]
+  },
+  
+  "digital-marketing-specialist": {
+    "requiredKeywords": [
+      "digital marketing", "seo", "sem", "google analytics", "social media",
+      "content marketing", "email marketing", "ppc", "google ads", "facebook ads"
+    ],
+    "preferredKeywords": [
+      "conversion optimization", "a/b testing", "marketing automation", "lead generation",
+      "roi", "ctr", "cpc", "cpm", "landing pages", "funnel optimization", "attribution"
+    ],
+    "technicalKeywords": [
+      "google analytics", "google ads", "facebook ads", "hubspot", "mailchimp",
+      "hootsuite", "buffer", "semrush", "ahrefs", "moz", "hotjar", "optimizely",
+      "google tag manager", "facebook pixel", "linkedin ads", "twitter ads"
+    ],
+    "scoringWeights": {
+      "keywords": 35,
+      "structure": 20,
+      "experience": 25,
+      "education": 10,
+      "skills": 10
+    },
+    "minimumExperience": 1,
+    "preferredEducation": ["marketing", "business", "communications", "digital media"],
+    "criticalSections": ["marketing tools", "campaign results", "certifications"]
+  }
+}

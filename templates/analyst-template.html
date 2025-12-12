@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; color: #333; }
+        .header { background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%); color: white; padding: 30px; text-align: center; }
+        .name { font-size: 28px; font-weight: bold; margin-bottom: 8px; }
+        .title { font-size: 18px; margin-bottom: 15px; opacity: 0.9; }
+        .contact-info { font-size: 12px; }
+        .contact-item { display: inline-block; margin: 0 15px; }
+        .section { margin: 25px 30px; }
+        .section-title { color: #2e7d32; font-size: 18px; font-weight: bold; border-bottom: 2px solid #2e7d32; padding-bottom: 8px; margin-bottom: 15px; }
+        .objective { font-size: 13px; line-height: 1.6; text-align: justify; margin-bottom: 20px; }
+        .experience-item { margin-bottom: 20px; border-left: 3px solid #4caf50; padding-left: 15px; }
+        .job-title { font-size: 15px; font-weight: bold; color: #2e7d32; }
+        .company { font-size: 13px; font-style: italic; color: #666; margin: 3px 0; }
+        .date-range { font-size: 11px; color: #888; margin-bottom: 8px; }
+        .job-description { font-size: 12px; line-height: 1.5; text-align: justify; }
+        .education-item { margin-bottom: 15px; }
+        .degree { font-size: 14px; font-weight: bold; color: #2e7d32; }
+        .institution { font-size: 12px; color: #666; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        .skill-category { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50; }
+        .skill-category-title { font-size: 14px; font-weight: bold; color: #2e7d32; margin-bottom: 8px; }
+        .skill-list { list-style: none; padding: 0; margin: 0; }
+        .skill-list li { font-size: 11px; padding: 3px 0; color: #555; }
+        .skill-list li:before { content: "▸ "; color: #4caf50; font-weight: bold; }
+        .certification-item { margin-bottom: 12px; background: #f8f9fa; padding: 10px; border-radius: 5px; }
+        .cert-name { font-size: 13px; font-weight: bold; color: #2e7d32; }
+        .cert-issuer { font-size: 11px; color: #666; }
+        .language-item { display: inline-block; margin-right: 20px; margin-bottom: 8px; }
+        .language-name { font-weight: bold; font-size: 12px; }
+        .language-level { font-size: 11px; color: #666; }
+        .analytics-highlight { background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%); padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4caf50; }
+        .tools-container { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tool-tag { background: #4caf50; color: white; padding: 5px 10px; border-radius: 12px; font-size: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="name">{{personalInfo.firstName}} {{personalInfo.lastName}}</div>
+        <div class="title">{{jobRole.name}}</div>
+        <div class="contact-info">
+            <span class="contact-item">📧 {{personalInfo.email}}</span>
+            <span class="contact-item">📱 {{personalInfo.phone}}</span>
+            {{#if personalInfo.address}}<span class="contact-item">📍 {{personalInfo.address}}</span>{{/if}}
+            {{#if personalInfo.linkedin}}<span class="contact-item">💼 LinkedIn</span>{{/if}}
+            {{#if personalInfo.website}}<span class="contact-item">🌐 Portfolio</span>{{/if}}
+        </div>
+    </div>
+
+    <!-- Professional Objective -->
+    {{#if personalInfo.objective}}
+    <div class="section">
+        <div class="section-title">Analytical Profile</div>
+        <div class="analytics-highlight">
+            <div class="objective">{{personalInfo.objective}}</div>
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Core Competencies -->
+    {{#if skills.technical}}
+    <div class="section">
+        <div class="section-title">Analytics Tools & Technologies</div>
+        <div class="tools-container">
+            {{#each skills.technical}}
+            <span class="tool-tag">{{this}}</span>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Work Experience -->
+    {{#if experience}}
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        {{#each experience}}
+        <div class="experience-item">
+            <div class="job-title">{{title}}</div>
+            <div class="company">{{company}}</div>
+            <div class="date-range">{{startDate}} - {{#if current}}Present{{else}}{{endDate}}{{/if}}</div>
+            {{#if description}}<div class="job-description">{{description}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- Skills Grid -->
+    {{#if skills}}
+    <div class="section">
+        <div class="section-title">Key Competencies</div>
+        <div class="skills-grid">
+            {{#if skills.technical}}
+            <div class="skill-category">
+                <div class="skill-category-title">Technical Skills</div>
+                <ul class="skill-list">
+                    {{#each skills.technical}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+            
+            {{#if skills.soft}}
+            <div class="skill-category">
+                <div class="skill-category-title">Analytical Skills</div>
+                <ul class="skill-list">
+                    {{#each skills.soft}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Education -->
+    {{#if education}}
+    <div class="section">
+        <div class="section-title">Education</div>
+        {{#each education}}
+        <div class="education-item">
+            <div class="degree">{{degree}}</div>
+            <div class="institution">{{institution}} {{#if year}}({{year}}){{/if}}</div>
+            {{#if gpa}}<div class="date-range">GPA: {{gpa}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- Certifications -->
+    {{#if certifications}}
+    <div class="section">
+        <div class="section-title">Professional Certifications</div>
+        {{#each certifications}}
+        <div class="certification-item">
+            <div class="cert-name">{{name}}</div>
+            {{#if issuer}}<div class="cert-issuer">{{issuer}} {{#if year}}({{year}}){{/if}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    <!-- Languages -->
+    {{#if languages}}
+    <div class="section">
+        <div class="section-title">Languages</div>
+        {{#each languages}}
+        <div class="language-item">
+            <div class="language-name">{{name}}</div>
+            {{#if level}}<div class="language-level">{{level}}</div>{{/if}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</body>
+</html>

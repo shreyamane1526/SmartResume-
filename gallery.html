@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - SmartResume Templates</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-file-alt me-2"></i>SmartResume
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-enquiry">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        <i class="fas fa-question-circle me-1"></i>Quick Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Resume Templates Gallery</h1>
+            <p class="page-subtitle">Professional templates designed for specific job roles and industries</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-4" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="template-filters text-center">
+                        <h5 class="mb-3">Filter by Job Role</h5>
+                        <div class="filter-buttons">
+                            <button class="btn btn-outline-light btn-sm filter-btn active" data-filter="all">
+                                All Templates
+                            </button>
+                            <button class="btn btn-outline-light btn-sm filter-btn" data-filter="developer">
+                                Developer
+                            </button>
+                            <button class="btn btn-outline-light btn-sm filter-btn" data-filter="analyst">
+                                Data Analyst
+                            </button>
+                            <button class="btn btn-outline-light btn-sm filter-btn" data-filter="mobile">
+                                Mobile Developer
+                            </button>
+                            <button class="btn btn-outline-light btn-sm filter-btn" data-filter="design">
+                                Designer
+                            </button>
+                            <button class="btn btn-outline-light btn-sm filter-btn" data-filter="marketing">
+                                Marketing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Full Stack Developer Templates -->
+                <div class="gallery-item" data-category="developer">
+                    <div class="gallery-image">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Full Stack Developer - Modern</h4>
+                        <p>Clean and professional template optimized for full stack developers with emphasis on technical skills and project portfolio.</p>
+                        <div class="template-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">ATS-Friendly</span>
+                        </div>
+                        <a href="resume-builder.html?template=developer-modern" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="developer">
+                    <div class="gallery-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Backend Developer - Technical</h4>
+                        <p>Technical-focused template for backend developers highlighting system architecture and database expertise.</p>
+                        <div class="template-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <a href="resume-builder.html?template=backend-technical" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Data Analyst Templates -->
+                <div class="gallery-item" data-category="analyst">
+                    <div class="gallery-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Data Analyst - Analytics Focus</h4>
+                        <p>Data-driven template showcasing analytical skills, visualization expertise, and statistical knowledge.</p>
+                        <div class="template-tags">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        <a href="resume-builder.html?template=analyst-focus" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="analyst">
+                    <div class="gallery-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Business Intelligence Analyst</h4>
+                        <p>Professional template for BI analysts emphasizing business acumen and data visualization skills.</p>
+                        <div class="template-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Excel</span>
+                            <span class="tag">Business</span>
+                        </div>
+                        <a href="resume-builder.html?template=bi-analyst" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Developer Templates -->
+                <div class="gallery-item" data-category="mobile">
+                    <div class="gallery-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Mobile App Developer - Cross Platform</h4>
+                        <p>Modern template for mobile developers specializing in cross-platform app development.</p>
+                        <div class="template-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <a href="resume-builder.html?template=mobile-cross" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="mobile">
+                    <div class="gallery-image">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>iOS Developer - Native</h4>
+                        <p>Specialized template for iOS developers with emphasis on Swift programming and Apple ecosystem.</p>
+                        <div class="template-tags">
+                            <span class="tag">Swift</span>
+                            <span class="tag">iOS</span>
+                            <span class="tag">Xcode</span>
+                        </div>
+                        <a href="resume-builder.html?template=ios-native" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Designer Templates -->
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-image">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>UI/UX Designer - Creative</h4>
+                        <p>Creative template for UI/UX designers showcasing design thinking and user experience expertise.</p>
+                        <div class="template-tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Adobe</span>
+                            <span class="tag">Design</span>
+                        </div>
+                        <a href="resume-builder.html?template=uiux-creative" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="design">
+                    <div class="gallery-image">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Graphic Designer - Portfolio</h4>
+                        <p>Visual template for graphic designers with space for portfolio highlights and creative skills.</p>
+                        <div class="template-tags">
+                            <span class="tag">Photoshop</span>
+                            <span class="tag">Illustrator</span>
+                            <span class="tag">Creative</span>
+                        </div>
+                        <a href="resume-builder.html?template=graphic-portfolio" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Marketing Templates -->
+                <div class="gallery-item" data-category="marketing">
+                    <div class="gallery-image">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Digital Marketing Specialist</h4>
+                        <p>Dynamic template for digital marketers highlighting campaign success and online marketing expertise.</p>
+                        <div class="template-tags">
+                            <span class="tag">SEO</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">Social Media</span>
+                        </div>
+                        <a href="resume-builder.html?template=digital-marketing" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="marketing">
+                    <div class="gallery-image">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="gallery-content">
+                        <h4>Marketing Manager - Strategic</h4>
+                        <p>Executive template for marketing managers focusing on strategic planning and team leadership.</p>
+                        <div class="template-tags">
+                            <span class="tag">Strategy</span>
+                            <span class="tag">Leadership</span>
+                            <span class="tag">ROI</span>
+                        </div>
+                        <a href="resume-builder.html?template=marketing-manager" class="btn btn-primary btn-sm mt-2">
+                            <i class="fas fa-edit me-1"></i>Use Template
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="cta-title">Can't Find the Perfect Template?</h2>
+                    <p class="cta-subtitle">Our resume builder lets you customize any template to match your unique career path</p>
+                    <a href="resume-builder.html" class="btn btn-light btn-lg">
+                        <i class="fas fa-plus me-2"></i>Start Building
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-file-alt me-2"></i>SmartResume</h5>
+                        <p>Professional resume building made easy</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <a href="about.html">About</a>
+                        <a href="features.html">Features</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">&copy; 2025 SmartResume. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enquiryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="enquiryName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="enquiryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="enquiryMessage" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .template-filters {
+            margin-bottom: 2rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-btn {
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--light-text);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .gallery-item.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+        
+        .gallery-image {
+            height: 200px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--light-text);
+        }
+        
+        .gallery-content {
+            padding: 1.5rem;
+        }
+        
+        .gallery-content h4 {
+            color: var(--light-text);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .gallery-content p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        .template-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--accent-color);
+        }
+        
+        @media (max-width: 767.98px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 200px;
+            }
+            
+            .gallery-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Gallery filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

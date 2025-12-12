@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SmartResume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-file-alt me-2"></i>SmartResume
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+                
+                <div class="navbar-enquiry">
+                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+                        <i class="fas fa-question-circle me-1"></i>Quick Enquiry
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">Get in touch with our team for support, feedback, or business inquiries</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-lg-4 mb-5">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Get In Touch</h3>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Address</h5>
+                                <p>Shreya Mane<br>KWadala East,Mumbai<br>India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Phone</h5>
+                                <p>+91 12345 06789<br>Mon - Fri, 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <p>info@smartresume.com<br>support@smartresume.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Website</h5>
+                                <p>www.smartresume.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h5 class="mb-3">Follow Us</h5>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="contact-form-container">
+                        <h3 class="mb-4">Send us a Message</h3>
+                        
+                        <form id="contactForm" action="php/process-contact.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company/Organization</label>
+                                <input type="text" class="form-control" id="company" name="company">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select class="form-control" id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="business">Business Partnership</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Subscribe to our newsletter for updates and tips
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                                    <label class="form-check-label" for="privacy">
+                                        I agree to the <a href="#" class="text-accent">Privacy Policy</a> and <a href="#" class="text-accent">Terms of Service</a> *
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5" style="background: var(--darker-bg);">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Quick answers to common questions</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                    How do I create a resume using SmartResume?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Simply visit our Resume Builder page, select your job role, choose a template, and fill in your information. Our system will guide you through each step and provide suggestions to optimize your resume.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                    Is the resume analysis feature really AI-powered?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes! Our analysis engine uses advanced algorithms to evaluate your resume content, structure, and optimization for specific job roles. It provides personalized feedback and improvement suggestions.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    Can I download my resume in different formats?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Currently, we offer high-quality PDF downloads that maintain perfect formatting. We're working on adding more formats like Word documents in future updates.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                    How do I get technical support?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can reach our support team through this contact form, email us at support@smartresume.com, or use the Quick Enquiry button in the navigation bar for immediate assistance.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-file-alt me-2"></i>SmartResume</h5>
+                        <p>Professional resume building made easy</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <a href="about.html">About</a>
+                        <a href="features.html">Features</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">&copy; 2025 SmartResume. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enquiryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="enquiryName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="enquiryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="enquiryMessage" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            background: var(--gradient-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h5 {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-details p {
+            color: var(--gray-text);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        
+        .contact-form-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+        
+        .form-check-label {
+            color: var(--gray-text);
+        }
+        
+        .text-accent {
+            color: var(--accent-color) !important;
+            text-decoration: none;
+        }
+        
+        .text-accent:hover {
+            text-decoration: underline;
+        }
+        
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .accordion-button {
+            background: transparent;
+            color: var(--light-text);
+            border: none;
+            font-weight: 500;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--light-text);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--gray-text);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit form
+            fetch('php/process-contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showAlert('success', 'Message sent successfully! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    showAlert('danger', data.message || 'Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('danger', 'Network error. Please check your connection and try again.');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Contact form AJAX submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            fetch('php/process-contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show success message
+                    showAlert('success', data.message);
+                    this.reset();
+                } else {
+                    // Show error message
+                    showAlert('danger', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('danger', 'An error occurred. Please try again.');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+        
+        // Function to show alert message
+        function showAlert(type, message) {
+            // Create alert element
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            
+            // Insert alert before the form
+            const form = document.getElementById('contactForm');
+            form.parentNode.insertBefore(alertDiv, form);
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+                setTimeout(() => alertDiv.remove(), 150);
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
+                                    Yes, we use enterprise-grade security measures including encryption and secure data handling. Your personal information is never shared with third parties without your consent.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    Can I edit my resume after downloading?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    While the PDF download is final, you can always return to the builder to make changes and generate a new version. We recommend saving your progress regularly.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                    What file formats are supported for analysis?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our resume analyzer supports PDF, DOC, and DOCX file formats. For best results, we recommend uploading PDF files with selectable text.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <h5><i class="fas fa-file-alt me-2"></i>SmartResume</h5>
+                        <p>Professional resume building made easy</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-links">
+                        <a href="about.html">About</a>
+                        <a href="features.html">Features</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-copyright">&copy; 2025 SmartResume. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quick Enquiry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form id="enquiryForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="enquiryName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="enquiryName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="enquiryEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enquiryMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="enquiryMessage" rows="3" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            height: 100%;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            background: var(--gradient-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h5 {
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-details p {
+            color: var(--gray-text);
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        
+        .contact-form-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+        
+        .form-check-label {
+            color: var(--gray-text);
+        }
+        
+        .text-accent {
+            color: var(--accent-color) !important;
+            text-decoration: none;
+        }
+        
+        .text-accent:hover {
+            text-decoration: underline;
+        }
+        
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+        }
+        
+        .accordion-button {
+            background: transparent;
+            color: var(--light-text);
+            border: none;
+            font-weight: 500;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: rgba(255, 107, 53, 0.1);
+            color: var(--light-text);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        .accordion-body {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--gray-text);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+            submitBtn.disabled = true;
+            
+            // Submit form
+            fetch('php/process-contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showAlert('success', 'Message sent successfully! We will get back to you soon.');
+                    this.reset();
+                } else {
+                    showAlert('danger', data.message || 'Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showAlert('danger', 'Network error. Please check your connection and try again.');
+            })
+            .finally(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
